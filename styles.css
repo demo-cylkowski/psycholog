@@ -190,7 +190,7 @@ html {
 /* Navigation */
 .navbar {
     position: fixed;
-    top: 32px; /* Will be adjusted dynamically based on demo notice height */
+    top: 0;
     left: 0;
     right: 0;
     background: rgba(255, 255, 255, 0.95);
@@ -1469,52 +1469,16 @@ html {
     color: var(--text-light);
 }
 
-/* Demo Notice */
-.demo-notice {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-    color: white;
-    text-align: center;
-    padding: 6px 20px;
-    font-size: 13px;
-    font-weight: 500;
-    z-index: 10002; /* Higher than navbar */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.demo-notice p {
+/* Footer Demo Disclaimer */
+.demo-disclaimer {
+    color: var(--text-light);
     margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
 }
 
-/* Removed slideDown animation for demo notice */
-
-/* Mobile adjustments for demo notice */
+/* Mobile adjustments */
 @media (max-width: 768px) {
-    .demo-notice {
-        font-size: 10px;
-        padding: 3px 10px;
-        line-height: 1.2;
-        position: fixed;
-        z-index: 10002;
-    }
-    
-    .demo-notice p {
-        flex-wrap: wrap;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-        word-break: break-word;
-    }
-    
     .navbar {
-        top: 28px; /* Adjusted for smaller demo notice */
+        top: 0;
     }
     
     .nav-container {
@@ -1528,7 +1492,7 @@ html {
     }
     
     .hero {
-        padding-top: 100px; /* Adjusted for demo notice + navbar */
+        padding-top: 80px; /* Adjusted for navbar */
     }
 }
 
@@ -1549,7 +1513,7 @@ html {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     :root {
         --section-padding: 80px 0;
     }
@@ -1638,19 +1602,8 @@ html {
         padding: 0 15px;
     }
     
-    .demo-notice {
-        font-size: 9px;
-        padding: 2px 8px;
-        min-height: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        z-index: 10002;
-    }
-    
     .navbar {
-        top: 22px; /* Adjusted for very small demo notice */
+        top: 0;
     }
     
     .nav-container {

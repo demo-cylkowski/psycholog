@@ -794,37 +794,12 @@ function initMapOptimizations() {
     }
 }
 
-// Adjust navbar position based on demo notice height
-function adjustNavbarPosition() {
-    const demoNotice = document.querySelector('.demo-notice');
-    const navbar = document.querySelector('.navbar');
-    
-    if (demoNotice && navbar) {
-        const demoNoticeHeight = demoNotice.offsetHeight;
-        navbar.style.top = demoNoticeHeight + 'px';
-        
-        // Also adjust hero section padding
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            const navbarHeight = navbar.offsetHeight;
-            const totalOffset = demoNoticeHeight + navbarHeight + 20; // 20px extra padding
-            hero.style.paddingTop = totalOffset + 'px';
-        }
-    }
-}
-
 // Initialize all functions when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     // Force scroll to top
     window.scrollTo(0, 0);
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
-    
-    // Adjust navbar position
-    adjustNavbarPosition();
-    
-    // Re-adjust on window resize
-    window.addEventListener('resize', adjustNavbarPosition);
     
     // Initialize all components
     initMobileNavigation();

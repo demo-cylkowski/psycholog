@@ -39,7 +39,8 @@ Projekt wykorzystuje palety kolorów inspirowane naturą:
 - **Smooth scrolling** - płynne przewijanie między sekcjami
 - **Scroll animations** - elementy pojawiają się podczas przewijania
 - **Hover effects** - interaktywne efekty przy najechaniu myszą
-- **Mobile hamburger menu** - responsywna nawigacja mobilna
+- **Mobile hamburger menu** - responsywna nawigacja mobilna (< 1000px)
+- **Fixed navbar** - pasek nawigacyjny przyklejony do góry strony
 
 ### 📱 Interaktywne Elementy
 - **FAQ accordion** - rozwijane pytania i odpowiedzi
@@ -207,6 +208,7 @@ Przejrzysta struktura cenowa:
 - **Przydatne linki** - Polityka prywatności, Regulamin
 - **Kontakt awaryjny** - Telefon zaufania 116 123
 - **Copyright** - © 2025 Marsel Cylkowski
+- **Demo disclaimer** - Dyskretna informacja o charakterze demonstracyjnym
 
 ### 10. 📋 Modals
 - **Polityka prywatności** - Szczegółowe informacje o RODO
@@ -270,14 +272,14 @@ http-server
 ### Breakpoints
 ```css
 /* Mobile First Approach */
-@media (max-width: 767px)   { /* Mobile */ }
-@media (max-width: 992px)   { /* Tablet */ }  
-@media (min-width: 993px)   { /* Desktop */ }
-@media (min-width: 1200px)  { /* Large Desktop */ }
+@media (max-width: 480px)   { /* Small Mobile */ }
+@media (max-width: 1000px)  { /* Mobile & Tablet - Hamburger menu */ }  
+@media (max-width: 1024px)  { /* Tablet adjustments */ }
+@media (min-width: 1001px)  { /* Desktop */ }
 ```
 
 ### Mobile Features
-- **Hamburger menu** - Składana nawigacja
+- **Hamburger menu** - Składana nawigacja (aktywna poniżej 1000px)
 - **Touch gestures** - Swipe-friendly interactions
 - **Optimized forms** - Lepsze UX na urządzeniach dotykowych
 - **Readable text** - Odpowiednie rozmiary czcionek
@@ -344,13 +346,16 @@ Wymiary i formaty obrazów:
 ## 🔧 Konfiguracja
 
 ### Google Maps
-Aby aktywować mapę, potrzebujesz Google Maps API key:
+Mapa używa standardowego Google Maps Embed API (iframe), który **nie wymaga API key** dla podstawowego osadzenia:
 
-1. Uzyskaj API key w Google Cloud Console
-2. Edytuj iframe src w sekcji contact:
 ```html
-<iframe src="https://www.google.com/maps/embed?pb=YOUR_API_KEY&...">
+<iframe src="https://www.google.com/maps/embed?pb=...">
 ```
+
+**Funkcje mapy:**
+- Lazy loading - ładuje się przy przewijaniu lub kliknięciu
+- Optymalizacja mobilna - zmniejszona wysokość na urządzeniach mobilnych
+- Touch handling - zapobiega konfliktom przewijania
 
 ### Contact Form Backend
 Formularz jest gotowy do integracji. Możliwe opcje:
@@ -484,5 +489,12 @@ Frontend Developer & UI/UX Designer
 
 ---
 
-*Dokumentacja wygenerowana: 26 września 2025*  
-*Wersja: 1.0.0*
+*Dokumentacja zaktualizowana: 1 października 2025*  
+*Wersja: 1.1.0*
+
+### Changelog v1.1.0
+- Usunięto górny pasek demonstracyjny
+- Dodano dyskretną informację w footerze o charakterze demo
+- Zmieniono breakpoint dla menu hamburger z 768px na 1000px
+- Dostosowano pozycjonowanie navbar do `top: 0`
+- Zoptymalizowano ładowanie mapy Google Maps (lazy loading)
